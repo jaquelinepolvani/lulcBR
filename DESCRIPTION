@@ -1,0 +1,21 @@
+Package: lulcBR
+Type: Package
+Title: Land Use and Land Cover (LULC) Analysis for Brazil (based on MapBiomas Collection 10)
+Version: 0.1.0
+Authors@R:   person("Jaqueline", "Lopes Polvani", email = "jaqueline.lopes-polvani@stud-mail.uni-wuerzburg.de", role = c("aut", "cre")) 
+Description: Extracts and analyzes Brazil LULC data based on Mapbiomas LULC classification rasters. 
+    Provides functions for LULC visualization, transition matrices, stability maps, trend analysis and animations. 
+    Implements cloud‑based reading for time series processing.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports:
+    terra,
+    sf,
+    dplyr,
+    tidyr,
+    ggplot2,
+    gganimate,
+    ggspatial,
+    gifski
+URL: 
+Config/roxygen2/version: 8.0.0
