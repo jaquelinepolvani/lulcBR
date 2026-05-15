@@ -218,4 +218,3 @@ groups_transition <- function(aoi, year1, year2,
     transitions_area
   ))
 }
-

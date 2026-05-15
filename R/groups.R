@@ -132,10 +132,14 @@ groups <- function(){
       ),
       label = case_when(
         transition_id == 1 ~ "No change",
-        transition_id == 2 ~ "From Forest or natural non forest areas to Pasture, agriculture or non-vegetated areas",
-        transition_id == 3 ~ "From Pasture, agriculture or non-vegetated areas to Forest or natural non forest areas",
-        transition_id == 4 ~ "Gain of Surface Water",
-        transition_id == 5 ~ "Loss of Surface Water"
+        transition_id == 2 ~ "From forest or natural non forest
+areas to pasture, agriculture
+or non-vegetated areas",
+        transition_id == 3 ~ "From pasture, agriculture or
+non-vegetated areas to forest
+or natural non forest areas",
+        transition_id == 4 ~ "Gain of surface water",
+        transition_id == 5 ~ "Loss of surface water"
       )
     )
 

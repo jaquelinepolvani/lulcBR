@@ -72,7 +72,6 @@ trend_analysis <- function(aoi, years = 1985:2024,
 
 
   ### 3. Pre-calculate Pixel Area Map (The Precise Way)
-  message("Computing pixel area weights")
 
   # Calculate cell area
   r_crop <- terra::crop(r, aoi)
@@ -120,7 +119,15 @@ trend_analysis <- function(aoi, years = 1985:2024,
         p_value = sum_mod$coefficients[2, 4],
         r_squared = sum_mod$r.squared
       )
-    })
+    }) %>%
+    mutate(
+      p_stars = case_when(
+        p_value < 0.001 ~ "***",
+        p_value < 0.01  ~ "**",
+        p_value < 0.05  ~ "*",
+        TRUE            ~ "ns"
+      )
+    )
 
 
   ### 6. Visualization
@@ -143,7 +150,11 @@ trend_analysis <- function(aoi, years = 1985:2024,
     geom_smooth(method = "lm", formula = y ~ x, se = TRUE, fill = "grey80", alpha = 0.3, linewidth = 0.9) +
     scale_colour_manual(values = group_colors, guide = "none")
 
-  facet_wrap(~ group, scales = "free_y", ncol = 3)
+  if (packageVersion("ggplot2") >= "3.5.0") {
+    p <- p + facet_wrap(~ group, scales = "free_y", ncol = 3, axes = "all")
+  } else {
+    p <- p + facet_wrap(~ group, scales = "free_y", ncol = 3)
+  }
 
   p <- p + labs(title = title, x = "Year", y = expression(Area ~ (ha)), caption = stats_caption) +
     theme_minimal(base_size = 11) +
@@ -176,6 +187,6 @@ trend_analysis <- function(aoi, years = 1985:2024,
   invisible(list(
     data = df_long,
     trends = trends
-  )
+    )
   )
 }
