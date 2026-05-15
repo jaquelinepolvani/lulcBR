@@ -1,7 +1,7 @@
 Package: lulcBR
 Type: Package
 Title: Land Use and Land Cover (LULC) Analysis for Brazil (based on MapBiomas Collection 10)
-Version: 0.1.0
+Version: 0.1.1
 Authors@R:   person("Jaqueline", "Lopes Polvani", email = "jaqueline.lopes-polvani@stud-mail.uni-wuerzburg.de", role = c("aut", "cre")) 
 Description: Extracts and analyzes Brazil LULC data based on Mapbiomas LULC classification rasters. 
     Provides functions for LULC visualization, transition matrices, stability maps, trend analysis and animations. 
