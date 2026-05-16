@@ -38,3 +38,9 @@ four categories (remained forest, forest loss, forest gain, non-applicable)
 using `forest_related()`, and generates a map. Optionally saves
 the transition raster (GeoTIFF) and a CSV of transition areas (hectares).
 }
+\examples{
+\dontrun{
+forest_transition(aoi, year1 = 2000, year2 = 2020)
+}
+
+}

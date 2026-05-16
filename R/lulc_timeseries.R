@@ -13,7 +13,13 @@
 #' @return Invisibly list with legend data frame, results (year, class, percentage, area_ha),
 #'         and area differences between consecutive years.
 #' @export
-#' @import terra
+#'
+#' @examples
+#' \dontrun{
+#' lulc_timeseries(aoi, years = 2000:2020, plot_type = "area")
+#' }
+#'
+#' @importFrom terra rast vect crop mask project same.crs crs cellSize zonal freq classify values writeRaster aggregate patches expanse global distance ifel match
 #' @import sf
 #' @import ggplot2
 #' @import dplyr

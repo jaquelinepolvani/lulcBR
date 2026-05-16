@@ -4,3 +4,4 @@ utils::globalVariables(c(
   "count_pixels", "label", "transition_id", "transition_type",
   "value", "class_name"
 ))
+

@@ -11,7 +11,13 @@
 #' @param write_csv Logical; write trend statistics as CSV.
 #' @return Invisibly list with data (long format) and trends (slope, p_value, r_squared).
 #' @export
-#' @import terra
+#'
+#' @examples
+#' \dontrun{
+#' trend_analysis(aoi, years = 2000:2020, write_csv = TRUE)
+#' }
+#'
+#' @importFrom terra rast vect crop mask project same.crs crs cellSize zonal freq classify values writeRaster aggregate patches expanse global distance ifel match
 #' @import sf
 #' @import ggplot2
 #' @import tidyr
@@ -150,11 +156,7 @@ trend_analysis <- function(aoi, years = 1985:2024,
     geom_smooth(method = "lm", formula = y ~ x, se = TRUE, fill = "grey80", alpha = 0.3, linewidth = 0.9) +
     scale_colour_manual(values = group_colors, guide = "none")
 
-  if (packageVersion("ggplot2") >= "3.5.0") {
-    p <- p + facet_wrap(~ group, scales = "free_y", ncol = 3, axes = "all")
-  } else {
-    p <- p + facet_wrap(~ group, scales = "free_y", ncol = 3)
-  }
+  p <- p + facet_wrap(~ group, scales = "free_y", ncol = 3, axes = "all")
 
   p <- p + labs(title = title, x = "Year", y = expression(Area ~ (ha)), caption = stats_caption) +
     theme_minimal(base_size = 11) +

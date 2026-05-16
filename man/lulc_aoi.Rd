@@ -35,3 +35,21 @@ Downloads MapBiomas Collection 10 raster for a single year, crops to the AOI,
 and generates a standardized map. Optionally saves the masked
 raster (GeoTIFF) and a CSV of class areas (hectares).
 }
+\examples{
+\dontrun{
+library(geobr)
+library(terra)
+
+# Get an area of interest (e.g., Colina municipality, SP)
+muni <- read_municipality()
+aoi <- subset(muni, name_muni == "Colina")
+aoi <- vect(aoi)
+
+# Create a map for 2020
+lulc_aoi(aoi, year = 2020)
+
+# Save raster and CSV to a specific directory
+lulc_aoi(aoi, year = 2020, output_dir = "./results", write_raster = TRUE, write_csv = TRUE)
+}
+
+}

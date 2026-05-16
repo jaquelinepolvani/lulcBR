@@ -46,3 +46,9 @@ Invisibly returns the animated plot object.
 Generates an animated map (GIF) showing land cover change over a sequence of
 years. Uses cloud‑optimized reads and optional aggregation for performance.
 }
+\examples{
+\dontrun{
+lulc_animation(aoi, years = 2000:2020, output_file = "animation.gif")
+}
+
+}

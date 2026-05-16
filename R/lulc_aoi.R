@@ -13,7 +13,25 @@
 #' @return Invisibly list with masked SpatRaster and area data frame. If no
 #'         write flags are TRUE, the area data frame is returned visibly.
 #' @export
-#' @import terra
+#'
+#' @examples
+#' \dontrun{
+#' library(geobr)
+#' library(terra)
+#'
+#' # Get an area of interest (e.g., Colina municipality, SP)
+#' muni <- read_municipality()
+#' aoi <- subset(muni, name_muni == "Colina")
+#' aoi <- vect(aoi)
+#'
+#' # Create a map for 2020
+#' lulc_aoi(aoi, year = 2020)
+#'
+#' # Save raster and CSV to a specific directory
+#' lulc_aoi(aoi, year = 2020, output_dir = "./results", write_raster = TRUE, write_csv = TRUE)
+#' }
+#'
+#' @importFrom terra rast vect crop mask project same.crs crs cellSize zonal freq classify values writeRaster aggregate patches expanse global distance ifel match
 #' @import sf
 #' @import ggplot2
 #' @import ggspatial

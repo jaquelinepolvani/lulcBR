@@ -35,3 +35,9 @@ Computes annual percentage and area (hectares) per land cover class over a
 sequence of years. Produces a stacked area plot or line plot. Optionally
 saves the results and area differences between consecutive years as CSV.
 }
+\examples{
+\dontrun{
+lulc_timeseries(aoi, years = 2000:2020, plot_type = "area")
+}
+
+}

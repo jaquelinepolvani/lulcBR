@@ -36,3 +36,9 @@ over the specified time series. Produces a map of change counts and returns
 a frequency table with pixel counts, area (hectares), and percentage per
 change level.
 }
+\examples{
+\dontrun{
+class_stability(aoi, years = 2000:2020)
+}
+
+}

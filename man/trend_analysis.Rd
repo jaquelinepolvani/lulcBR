@@ -31,3 +31,9 @@ Computes annual area (hectares) for Forest, Herbaceous, Farming,
 Non vegetated Areas, and Water classes over a time series. Fits a linear regression
 per group and returns slope, p-value, and R2. Produces a faceted plot.
 }
+\examples{
+\dontrun{
+trend_analysis(aoi, years = 2000:2020, write_csv = TRUE)
+}
+
+}

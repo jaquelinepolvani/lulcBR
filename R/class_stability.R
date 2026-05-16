@@ -14,7 +14,13 @@
 #' @return Invisibly list with change_raster (SpatRaster) and frequency_table
 #'         (data frame).
 #' @export
-#' @import terra
+#'
+#' @examples
+#' \dontrun{
+#' class_stability(aoi, years = 2000:2020)
+#' }
+#'
+#' @importFrom terra rast vect crop mask project same.crs crs cellSize zonal freq classify values writeRaster aggregate patches expanse global distance ifel match
 #' @import sf
 #' @import ggplot2
 #' @import ggspatial
@@ -22,7 +28,6 @@
 #' @import grDevices
 #' @importFrom stats setNames
 #' @importFrom utils write.csv
-#'
 
 class_stability <- function(aoi, years = 1985:2024,
                             title = NULL,

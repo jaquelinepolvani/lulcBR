@@ -38,3 +38,9 @@ deforestation drivers using `def_drivers()`, and generates a map..
 Optionally saves the transition raster (GeoTIFF) and a CSV of transition
 areas (hectares).
 }
+\examples{
+\dontrun{
+def_drivers_transition(aoi, year1 = 2000, year2 = 2020)
+}
+
+}

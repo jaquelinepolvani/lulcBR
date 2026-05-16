@@ -15,7 +15,12 @@
 #' @return Invisibly list with transition SpatRaster and area data frame.
 #' @export
 #'
-#' @import terra
+#' @examples
+#' \dontrun{
+#' forest_transition(aoi, year1 = 2000, year2 = 2020)
+#' }
+#'
+#' @importFrom terra rast vect crop mask project same.crs crs cellSize zonal freq classify values writeRaster aggregate patches expanse global distance ifel match
 #' @import sf
 #' @import ggplot2
 #' @import ggspatial

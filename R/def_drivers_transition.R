@@ -14,13 +14,20 @@
 #' @param write_csv Logical; write transition areas (ha) as CSV.
 #' @return Invisibly list with transition SpatRaster and area data frame.
 #' @export
-#' @import terra
+#'
+#' @examples
+#' \dontrun{
+#' def_drivers_transition(aoi, year1 = 2000, year2 = 2020)
+#' }
+#'
+#' @importFrom terra rast vect crop mask project same.crs crs cellSize zonal freq classify values writeRaster aggregate patches expanse global distance ifel match
 #' @import sf
 #' @import ggplot2
 #' @import ggspatial
 #' @import dplyr
 #' @importFrom stats setNames
 #' @importFrom utils write.csv
+
 
 def_drivers_transition <- function(aoi, year1, year2,
                                    title = NULL,

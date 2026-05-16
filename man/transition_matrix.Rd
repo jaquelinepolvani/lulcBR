@@ -24,3 +24,9 @@ Computes the area (hectares) that changed from each original aggregated class
 between two years. Returns a 5×5 matrix with rows = original class,
 columns = target class. Optionally saves the matrix as CSV.
 }
+\examples{
+\dontrun{
+transition_matrix(aoi, year1 = 2000, year2 = 2020)
+}
+
+}

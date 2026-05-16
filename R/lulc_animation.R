@@ -15,7 +15,13 @@
 #' @param preview Logical; show preview in RStudio viewer (default TRUE).
 #' @return Invisibly returns the animated plot object.
 #' @export
-#' @import terra
+#'
+#' @examples
+#' \dontrun{
+#' lulc_animation(aoi, years = 2000:2020, output_file = "animation.gif")
+#' }
+#'
+#' @importFrom terra rast vect crop mask project same.crs crs cellSize zonal freq classify values writeRaster aggregate patches expanse global distance ifel match
 #' @import sf
 #' @import ggplot2
 #' @import ggspatial
@@ -155,7 +161,7 @@ lulc_animation <- function(aoi, years = 1985:2024,
 
     labs(
       title = title,
-      subtitle = "Year: {frame_time}"
+      subtitle = paste0("Year: ", "{frame_time}")
     ) +
 
     theme_void() +

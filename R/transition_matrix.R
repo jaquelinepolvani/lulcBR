@@ -11,12 +11,17 @@
 #' @param output_dir Directory to save CSV (default working directory).
 #' @return Returns a data frame (5×5 matrix) with areas in hectares.
 #' @export
-#' @import terra
+#'
+#' @examples
+#' \dontrun{
+#' transition_matrix(aoi, year1 = 2000, year2 = 2020)
+#' }
+#'
+#' @importFrom terra rast vect crop mask project same.crs crs cellSize zonal freq classify values writeRaster aggregate patches expanse global distance ifel match
 #' @import sf
 #' @import dplyr
 #' @importFrom stats setNames
 #' @importFrom utils write.csv
-
 
 transition_matrix <- function(aoi, year1, year2,
                               output_dir = NULL) {

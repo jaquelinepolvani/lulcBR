@@ -38,3 +38,9 @@ reclassifies into five thematic groups using `groups()`, and generates a
 map with legend. Optionally saves the transition raster (GeoTIFF) and a CSV
 of transition areas (hectares).
 }
+\examples{
+\dontrun{
+groups_transition(aoi, year1 = 2000, year2 = 2020)
+}
+
+}
