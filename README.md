@@ -63,7 +63,7 @@ Brazil), in the Amazon Deforestation Arc (1985–2024).
 def_drivers_transition(aoi, 1985, 2024)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](README_files/figure-gfm/deforestation-map-1.png)<!-- -->
 
 The `class_stability()` function analyzes how many times each pixel
 changed class during the selected period.
@@ -77,7 +77,7 @@ class_stability(
 )
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](README_files/figure-gfm/class-stability-map-1.png)<!-- -->
 
 ### Animated map
 
@@ -108,7 +108,7 @@ lulc_timeseries(
 )
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](README_files/figure-gfm/lulc-timeseries-1.png)<!-- -->
 
 ### Transition matrix (CSV output)
 

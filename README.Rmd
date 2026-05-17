@@ -55,7 +55,6 @@ raposa <- subset(muni, name_muni == "Raposa") |> vect()
 ```
 
 ```{r aoi, include=FALSE}
-library(terra)
 library(maptiles)
 
 lon <- -(54 + 39/60 + 37.09/3600)
@@ -77,14 +76,14 @@ Functions such as `lulc_aoi()`, `groups_transition()`, `forest_transition()`, `d
 
 Below is a deforestation drivers map for Peixoto de Azevedo (MT, Brazil), in the Amazon Deforestation Arc (1985–2024).
 
-```{r fig.width=7, fig.height=6}
+```{r deforestation-map, fig.width=7, fig.height=6}
 def_drivers_transition(aoi, 1985, 2024)
 ```
 
 The `class_stability()` function analyzes how many times each pixel changed class during the selected period.
 
 Example for Bozano (RS):
-```{r fig.width=7, fig.height=6}
+```{r class-stability-map, fig.width=7, fig.height=6}
 class_stability(
   bozano,
   years = 2000:2024
@@ -110,7 +109,7 @@ lulc_animation(
 `lulc_timeseries()` generates a stacked area plot of land cover composition over time. 
 `trend_analysis()` produces linear trend plots for grouped classes.
 
-```{r fig.width=8, fig.height=5}
+```{r lulc-timeseries, fig.width=8, fig.height=5}
 lulc_timeseries(
   colina,
   years = 1985:2024,
