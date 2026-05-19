@@ -33,7 +33,7 @@ follow the MapBiomas Collection 10 standard.
 ## Creating an AOI
 
 Below are examples of how to create AOIs from Brazilian municipalities
-using`{geobr}`.
+using`{geodata}`.
 
 ``` r
 library(geodata)
@@ -69,11 +69,11 @@ aoi <- as.polygons(ext, crs = "EPSG:4326")
 
 | Function | Description | Key Arguments | Output |
 |:---|:---|:---|:---|
-| `lulc_aoi()` | Extracts land use/land cover data for a given AOI | `aoi`, `year` | `SpatRaster` / Map plot / Data frame |
-| `groups_transition()` | Maps aggregated land cover transitions between two years | `aoi`, `year1`, `year2` | Map plot / Data frame |
-| `forest_transition()` | Maps forest cover transitions over time | `aoi`, `year1`, `year2` | Map plot / Data frame |
-| `def_drivers_transition()` | Maps deforestation drivers | `aoi`, `year1`, `year2` | Map plot / Data frame |
-| `class_stability()` | Analyzes pixel-level stability (number of changes) | `aoi`, `years` | Map plot / Data frame |
+| `lulc_aoi()` | Extracts land use/land cover data for a given AOI | `aoi`, `year` | `SpatRaster` / Map / Data frame |
+| `groups_transition()` | Maps aggregated land cover transitions between two years | `aoi`, `year1`, `year2` | `SpatRaster` / Map / Data frame |
+| `forest_transition()` | Maps forest cover transitions over time | `aoi`, `year1`, `year2` | `SpatRaster` / Map / Data frame |
+| `def_drivers_transition()` | Maps deforestation drivers | `aoi`, `year1`, `year2` | `SpatRaster` / Map / Data frame |
+| `class_stability()` | Analyzes pixel-level stability (number of changes) | `aoi`, `years` | `SpatRaster` / Map / Data frame |
 | `lulc_animation()` | Creates an animated GIF of annual land cover maps | `aoi`, `years` | `.gif` file |
 | `lulc_timeseries()` | Produces a stacked area or line plot of annual land cover composition | `aoi`, `years`, `plot_type` | Stacked area or line plot |
 | `transition_matrix()` | Calculates land cover transition matrix in hectares | `aoi`, `year1`, `year2` | CSV file |
